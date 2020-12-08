@@ -1,4 +1,5 @@
 <?php 
+session_start();
   if(isset($_POST ['usu'])){
     include('conexion.php');
     $sql=new connection();
@@ -13,8 +14,8 @@
     $inicio=0;
 
     $op=(4);
-    $time = time();
-    $fecha=(date("d-m-Y (H:i:s)", $time));
+    date_default_timezone_set('America/El_Salvador');
+	  $fecha=date('d-m-Y H:i:s');
 
     function getRealIP() {
 
@@ -47,6 +48,9 @@
 
 
       }else{
+        
+          $_SESSION["validar"]=1;	
+	        $_SESSION['usuario']=$usuario;
 
           $sql=new connection();
           $conexion = $sql-> get_conection();
@@ -59,11 +63,15 @@
 
          switch ($cod_rol) {
            case '1':
-             header('Location: opcinesAdmin.php?usu=$usu') ;
+             header('Location: opcinesAdmin.php') ;
              break;
 
              case '2':
              header('Location: opcinesDig.php');
+             break;
+             
+             case '3':
+             header('Location: opcinesOpe.php');
              break;
            
            default:
