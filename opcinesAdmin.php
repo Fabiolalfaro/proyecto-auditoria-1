@@ -1,3 +1,10 @@
+<?php
+	session_start();
+
+	if ($_SESSION["validar"]==""){
+		header('Location: loginAuditoria.php');
+	}
+?>
 <!doctype html>
 <html lang="es">
   <head>
