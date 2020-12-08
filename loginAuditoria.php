@@ -1,8 +1,9 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="es">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -13,7 +14,7 @@
     <title>AUDITORIA</title>
   </head>
   <body><br><center>
-    <h3>INGRERSO</h3>
+    <h3>INGRESO</h3>
     <form class="" action="flogin.php" method="post">
     <div class="container">
       <div class="row">
